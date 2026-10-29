@@ -92,10 +92,10 @@ with aba2:
             with cols[i % 2]:
                 st.image(caminho_foto, caption=f"Memória {i+1}", use_container_width=True)
     else:
-        st.info("💡 A galeria está vazia. Seja o primeiro a enviar uma foto!")
+        st.info("A galeria está vazia. Seja o primeiro a enviar uma foto!")
 
 with aba3:
-    st.header("💬 Seção de Comentários")
+    st.header("Seção de Comentários")
     st.write("Deixe seu comentário, felicitação ou história marcante!")
     
     # Formulário para enviar o comentário
@@ -107,12 +107,12 @@ with aba3:
         if botao_enviar:
             if nome and comentario:
                 salvar_comentario(nome, comentario)
-                st.success("Comentário publicado com sucesso! ✨")
+                st.success("Comentário publicado.")
             else:
                 st.warning("Por favor, preencha o seu nome e o comentário.")
 
     st.markdown("---")
-    st.subheader("📢 Mural de Comentários")
+    st.subheader("Mural de Comentários")
     
     # Carrega e exibe os comentários salvos no arquivo JSON
     comentarios_salvos = carregar_comentarios()
@@ -121,4 +121,4 @@ with aba3:
             st.markdown(f"**👤 {c['nome']}** disse:")
             st.info(c['texto'])
     else:
-        st.write("Nenhum comentário ainda. Seja o primeiro a comentar! 👇")
+        st.write("Nenhum comentário ainda. Seja o primeiro a comentar!")
